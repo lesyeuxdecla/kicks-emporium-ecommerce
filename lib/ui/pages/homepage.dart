@@ -71,7 +71,6 @@ body: Consumer2<ProductController, UserController>(
     List<ProductModel> products = productController.products;
     List<String> brands = ['Nike', 'Adidas', 'Puma', 'Reebok', 'New Balance', 'Vans'];
 
-    // Lista de caminhos para as imagens de marca
     List<String> brandImages = [
       'assets/nikelogo.png',
       'assets/adidas.png',
@@ -111,7 +110,6 @@ body: Consumer2<ProductController, UserController>(
             enableInfiniteScroll: true,
           ),
         ),
-        // Texto "Marcas" após a barra de pesquisa e o carrossel de imagens
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Text(
@@ -122,27 +120,26 @@ body: Consumer2<ProductController, UserController>(
             ),
           ),
         ),
-        // Lista de marcas com rolagem
+        // rolagem
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Container(
-            height: 80, // Altura desejada da lista de marcas
+            height: 80, 
             child: ListView.builder(
-              scrollDirection: Axis.horizontal, // Rolagem horizontal para exibir marcas lado a lado
+              scrollDirection: Axis.horizontal,
               itemCount: brands.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: CircleAvatar(
                     backgroundImage: AssetImage(brandImages[index]),
-                    radius: 50, backgroundColor: Colors.transparent, // Raio do círculo
+                    radius: 50, backgroundColor: Colors.transparent, 
                   ),
                 );
               },
             ),
           ),
         ),
-        // Texto "Produtos" após a lista de marcas
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Column(
